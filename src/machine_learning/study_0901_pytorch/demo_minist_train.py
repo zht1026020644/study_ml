@@ -62,6 +62,7 @@ for epoch in range(3):
         loss = F.mse_loss(out, y_onehot)
         # 清零梯度
         optimizer.zero_grad()
+        # 求导
         loss.backward()
         # w' = w- lr*grad 计算梯度
         optimizer.step()
