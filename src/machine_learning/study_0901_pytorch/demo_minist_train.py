@@ -28,8 +28,9 @@ test_loader = torch.utils.data.DataLoader(torchvision.datasets.MNIST('mnist_data
 
 ## model
 class Net(nn.Module):
-    def __init__(self):
+    def __init__(self,name):
         super(Net, self).__init__()
+        self.name = name
         # xw+b
         self.fc1 = nn.Linear(28*28,256)
         self.fc2 = nn.Linear(256,64)
@@ -45,7 +46,8 @@ class Net(nn.Module):
         x = self.fc3(x)
         return x
 # 训练网络
-net = Net()
+net = Net("abc")
+print(net.parameters)
 optimizer= optim.SGD(net.parameters(),lr=0.01,momentum=0.9)
 # 保存loss的值
 train_loss = []
