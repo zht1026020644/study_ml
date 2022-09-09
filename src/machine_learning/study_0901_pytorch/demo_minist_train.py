@@ -56,10 +56,14 @@ for epoch in range(3):
         # x: [b,1,28,28], y[512]
         # [b,1,28,28] => [b,784]  把特征打横
         x = x.view(x.size(0),28*28)
+        print(x.dtype)
         # =>[b,10]
         out = net(x)
+
+        print("out:",out.shape)
         # [b,10]
         y_onehot = one_hot(y)
+        print("y_onehot:", y_onehot.shape)
         # loss = mse(y,one_hot)
         loss = F.mse_loss(out, y_onehot)
         # 清零梯度
