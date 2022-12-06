@@ -34,12 +34,17 @@ def build_agent(model, nb_actions):
 
 
 if __name__ == '__main__':
-    env = my_env_pro.EnvCube()
-    model = build_model(env.OBSERVATION_SPACE_VALUES,env.ACTION_SPACE_VALUES)
-    dqn = build_agent(model,env.ACTION_SPACE_VALUES)
-    dqn.fit(env, nb_steps=100000, visualize=False, verbose=1)
-    dqn.save_weights('dqn_weights_r88.h5f',overwrite=True)
-    scores = dqn.test(env, nb_episodes=5, visualize=True)
-    print(np.mean(scores.history['episode_reward']))
+    # env = my_env_pro.EnvCube()
+    # model = build_model(env.OBSERVATION_SPACE_VALUES,env.ACTION_SPACE_VALUES)
+    # dqn = build_agent(model,env.ACTION_SPACE_VALUES)
+    # dqn.fit(env, nb_steps=100000, visualize=False, verbose=1)
+    # dqn.save_weights('dqn_weights_r88.h5f',overwrite=True)
+    # scores = dqn.test(env, nb_episodes=5, visualize=True)
+    # print(np.mean(scores.history['episode_reward']))
+    # print((1,)+env.OBSERVATION_SPACE_VALUES)
+    # coefficient = np.random.randint(10, 100, 10)
+    # print(3**10)
+    a = np.random.randint(3**10)
+
 
 
